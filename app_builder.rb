@@ -66,6 +66,8 @@ class AppBuilder < Rails::AppBuilder
   def update_gems_all_groups
     ['bootstrap-sass',
       'bcrypt-ruby',
+      'draper',
+      'hashie',
       'haml-rails',
       'configurability',
       'loggability',
