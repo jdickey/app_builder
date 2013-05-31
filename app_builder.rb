@@ -65,6 +65,7 @@ class AppBuilder < Rails::AppBuilder
 
   def update_gems_all_groups
     ['bootstrap-sass',
+      'bootswatch-rails',
       'bcrypt-ruby',
       'draper',
       'hashie',
@@ -113,12 +114,14 @@ class AppBuilder < Rails::AppBuilder
         'rspec-http',
         'capybara',
         # 'fuubar',
+        'database_cleaner',
+        'naught',
         'pry',
         'pry-rails',
         'simplecov',
         'factory_girl_rails',
-        'jasmine-fixtures'
-        # 'pry-doc',
+        'jasmine-fixtures',
+        'pry-doc'
         # 'pry-nav',
         # 'pry-remote',
         # 'pry-stack_explorer',
