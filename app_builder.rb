@@ -25,7 +25,7 @@ class AppBuilder < Rails::AppBuilder
     generate 'rspec:install'
     remove_file '.rspec'
     create_file '.rspec', "--colour\n-f d"
-    generate 'teabag:install'
+    generate 'teaspoon:install'
   end
 
   private
@@ -46,8 +46,8 @@ class AppBuilder < Rails::AppBuilder
       'tmp/',
       'vendor/cache/*',
       'vendor/cache/**/',
-      'vendor/ruby',
-      './config/initializers/secret_token.rb'
+      'vendor/ruby'
+      # './config/initializers/secret_token.rb'
     ].each do |s|
       append_file '.gitignore', "#{s.to_s}\n"
     end
@@ -82,7 +82,7 @@ class AppBuilder < Rails::AppBuilder
 
   def update_gems_assets
     self.gem_group :assets do
-      ['teabag',
+      ['teaspoon',
         'twitter_bootstrap_form_for',
         'execjs',
         'jquery-rails'
@@ -133,7 +133,7 @@ class AppBuilder < Rails::AppBuilder
   end
 
   def update_gems_production
-    self.gem 'secret_token_replacer', git: 'git://github.com/jdickey/secret_token_replacer.git', group: [:production]
+    # self.gem 'secret_token_replacer', git: 'git://github.com/jdickey/secret_token_replacer.git', group: [:production]
   end
 
 end
