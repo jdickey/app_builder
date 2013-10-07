@@ -67,11 +67,15 @@ class AppBuilder < Rails::AppBuilder
     ['bootstrap-sass',
       'bootswatch-rails',
       'bcrypt-ruby',
+      'cancan',
+      'devise',
       'draper',
       'hashie',
       'haml-rails',
       'configurability',
       'loggability',
+      'rolify',
+      'simple_form',
       'yajl-ruby',
       'validates_email_format_of',
       'thin'
@@ -83,7 +87,6 @@ class AppBuilder < Rails::AppBuilder
   def update_gems_assets
     self.gem_group :assets do
       ['teaspoon',
-        'twitter_bootstrap_form_for',
         'execjs',
         'jquery-rails'
       ].each do |g|
@@ -97,7 +100,8 @@ class AppBuilder < Rails::AppBuilder
     self.gem_group :development do
       ['better_errors',
         'binding_of_caller',
-        'meta_request'
+        'meta_request',
+        'rubocop'
       ].each do |g|
         self.gem g
       end
@@ -106,21 +110,21 @@ class AppBuilder < Rails::AppBuilder
 
   def update_gems_dev_test
     self.gem_group :development, :test do
-      ['inherited_resources',
+      ['blind',
+        'inherited_resources',
         'quiet_assets',
         'rspec',
         'rspec-rails',
         'rspec-html-matchers',
         'rspec-http',
         'capybara',
-        # 'fuubar',
-        'database_cleaner',
+        'capybara-webkit',
         'naught',
         'pry',
         'pry-rails',
         'simplecov',
         'factory_girl_rails',
-        'jasmine-fixtures',
+        'tapout',
         'pry-doc'
         # 'pry-nav',
         # 'pry-remote',
@@ -129,6 +133,8 @@ class AppBuilder < Rails::AppBuilder
       ].each do |g|
         self.gem g
       end
+      self.gem 'database_cleaner', git: 'git://github.com/bmabey/database_cleaner'
+      puts "NOTE: The database_cleaner Gem is being installed from the upstream repo master branch. Remove the 'git:' link after version 1.1.1 is replaced in Rubygems."
     end
   end
 
