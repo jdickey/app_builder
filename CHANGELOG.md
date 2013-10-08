@@ -1,4 +1,10 @@
 
+## app_builder 0.8.4 (2013-10-08)
+  * When running `bundle install`, we now use the `--jobs` parameter to run parallel jobs if the `BUNDLER_JOBS` environment variable is set. This will usually make things *much* faster on multicore machines. `BUNDLER_JOBS` should normally be set to 1 *less* than the number of actual cores in the machine.
+  * Added installation of vendored JavaScript files as described in `README.md`.
+  * Added creation of `.rubocop.yml` in project directory with four initial variances from default configuration.
+  * Added creation of `lib/tasks/cruise.rake`, for [CruiseControl.rb](https://github.com/thoughtworks/cruisecontrol.rb) automation of Script and Ruby testing as well as Ruby style-guideline verification via [`rubocop`](https://github.com/bbatsov/rubocop).
+
 ## app_builder 0.8.3 (2013-10-08)
   * Added new Gems 'cancan', 'devise', 'rolify' and 'simple_form' to the default group in the Gemfile.
   * Added new Gem 'rubocop' to the :development group in the Gemfile.

@@ -15,6 +15,7 @@ rails new your_project_name -b /path/to/this/app_builder.rb
 
 1. It adds numerous Gems to the Gemfile before initial bundling, as detailed below;
 1. It installs its Gems into `vendor/`, rather than polluting the system Gem repository (or `rvm`/`rbenv` analogue);
+1. It copies several JavaScript files to the `vendor/assets/javascripts` directory (see below);
 1. It optionally creates a "welcome", or landing-page controller and view;
 1. It sets up for RSpec BDD rather than Test::Unit TDD, with a customised `.rspec` configuration;
 1. It creates a minimal `README.md`, in [Markdown](http://daringfireball.net/projects/markdown/) format rather than [RDoc](http://rdoc.rubyforge.org/);
@@ -23,53 +24,53 @@ rails new your_project_name -b /path/to/this/app_builder.rb
 ## Gemfile additions
 
 1. In the default, no-group "group":
-  1. [`bootstrap-sass`](https://github.com/thomas-mcdonald/bootstrap-sass/);
-  1. [`bcrypt-ruby`](https://github.com/codahale/bcrypt-ruby);
-  1. [`bootswatch-rails`](https://github.com/maxim/bootswatch-rails);
-  1. [`cancan`](https://github.com/ryanb/cancan/);
-  1. [`configurability`](https://github.com/ged/configurability);
-  1. [`devise`](https://github.com/plataformatec/devise);
-  1. [`draper`](https://github.com/drapergem/draper);
-  1. [`haml-rails`](https://github.com/indirect/haml-rails);
-  1. [`hashie`](https://github.com/intridea/hashie);
-  1. [`loggability`](https://github.com/ged/loggability);
-  1. [`rolify`](https://github.com/EppO/rolify);
-  1. [`simple_form`](https://github.com/plataformatec/simple_form);
-  1. [`thin`](https://github.com/macournoyer/thin/);
-  1. [`validates_email_format_of`](https://github.com/alexdunae/validates_email_format_of);
-  1. [`yajl-ruby`](https://github.com/brianmario/yajl-ruby).
+  1. [`bootstrap-sass`](https://github.com/thomas-mcdonald/bootstrap-sass/)
+  1. [`bcrypt-ruby`](https://github.com/codahale/bcrypt-ruby)
+  1. [`bootswatch-rails`](https://github.com/maxim/bootswatch-rails)
+  1. [`cancan`](https://github.com/ryanb/cancan/)
+  1. [`configurability`](https://github.com/ged/configurability)
+  1. [`devise`](https://github.com/plataformatec/devise)
+  1. [`draper`](https://github.com/drapergem/draper)
+  1. [`haml-rails`](https://github.com/indirect/haml-rails)
+  1. [`hashie`](https://github.com/intridea/hashie)
+  1. [`loggability`](https://github.com/ged/loggability)
+  1. [`rolify`](https://github.com/EppO/rolify)
+  1. [`simple_form`](https://github.com/plataformatec/simple_form)
+  1. [`thin`](https://github.com/macournoyer/thin/)
+  1. [`validates_email_format_of`](https://github.com/alexdunae/validates_email_format_of)
+  1. [`yajl-ruby`](https://github.com/brianmario/yajl-ruby)
 1. In the `:assets` group:
-  1. [`execjs`](https://github.com/sstephenson/execjs);
-  1. [`jquery-rails`](https://github.com/rails/jquery-rails).
+  1. [`execjs`](https://github.com/sstephenson/execjs)
+  1. [`jquery-rails`](https://github.com/rails/jquery-rails)
 1. In the `:development` group:
-  1. [`better_errors`](https://github.com/charliesome/better_errors);
-  1. [`binding_of_caller`](https://github.com/banister/binding_of_caller);
-  1. [`meta_request`](https://github.com/dejan/rails_panel/tree/master/meta_request);
-  1. [`rubocop`](https://github.com/bbatsov/rubocop);
+  1. [`better_errors`](https://github.com/charliesome/better_errors)
+  1. [`binding_of_caller`](https://github.com/banister/binding_of_caller)
+  1. [`meta_request`](https://github.com/dejan/rails_panel/tree/master/meta_request)
+  1. [`rubocop`](https://github.com/bbatsov/rubocop)
 1. In the `:development` *and* `:test` groups:
-  1. [`blind`](https://github.com/frodsan/blind);
-  1. [`capybara`](https://github.com/jnicklas/capybara);
-  1. [`capybara-webkit`](https://github.com/thoughtbot/capybara-webkit);
-  1. [`database_cleaner`](https://github.com/bmabey/database_cleaner);
-  1. [`factory_girl_rails`](https://github.com/thoughtbot/factory_girl_rails);
-  1. [`naught`](https://github.com/avdi/naught);
-  1. [`pry`](https://github.com/pry/pry);
-  1. [`pry-rails`](https://github.com/rweng/pry-rails);
-  1. [`quiet_assets`](https://github.com/evrone/quiet_assets);
-  1. [`rspec`](https://github.com/rspec/rspec);
-  1. [`rspec-html-matchers`](https://github.com/kucaahbe/rspec-html-matchers);
-  1. [`rspec-http`](https://github.com/c42/rspec-http);
-  1. [`rspec-rails`](https://github.com/rspec/rspec-rails);
-  1. [`simplecov`](https://github.com/colszowka/simplecov);
-  1. [`tapout`](https://github.com/rubyworks/tapout).
+  1. [`blind`](https://github.com/frodsan/blind)
+  1. [`capybara`](https://github.com/jnicklas/capybara)
+  1. [`capybara-webkit`](https://github.com/thoughtbot/capybara-webkit)
+  1. [`database_cleaner`](https://github.com/bmabey/database_cleaner)
+  1. [`factory_girl_rails`](https://github.com/thoughtbot/factory_girl_rails)
+  1. [`naught`](https://github.com/avdi/naught)
+  1. [`pry`](https://github.com/pry/pry)
+  1. [`pry-rails`](https://github.com/rweng/pry-rails)
+  1. [`quiet_assets`](https://github.com/evrone/quiet_assets)
+  1. [`rspec`](https://github.com/rspec/rspec)
+  1. [`rspec-html-matchers`](https://github.com/kucaahbe/rspec-html-matchers)
+  1. [`rspec-http`](https://github.com/c42/rspec-http)
+  1. [`rspec-rails`](https://github.com/rspec/rspec-rails)
+  1. [`simplecov`](https://github.com/colszowka/simplecov)
+  1. [`tapout`](https://github.com/rubyworks/tapout)
 
 The `:development` and `:test` groups have commented-out inclusions of five `pry`-related Gems that are either very infrequently used or seem to be linked to segfaults in Ruby;
 
-1. [`pry-doc`](https://github.com/pry/pry-doc);
-1. [`pry-nav`](https://github.com/nixme/pry-nav);
-1. [`pry-remote`](https://github.com/Mon-Ouie/pry-remote);
-1. [`pry-stack_explorer`](https://github.com/pry/pry-stack_explorer);
-1. [`pry-exception_explorer`](https://github.com/pry/pry-exception_explorer).
+1. [`pry-doc`](https://github.com/pry/pry-doc)
+1. [`pry-nav`](https://github.com/nixme/pry-nav)
+1. [`pry-remote`](https://github.com/Mon-Ouie/pry-remote)
+1. [`pry-stack_explorer`](https://github.com/pry/pry-stack_explorer)
+1. [`pry-exception_explorer`](https://github.com/pry/pry-exception_explorer)
 
 ## Former Gemfile additions
 
@@ -80,10 +81,22 @@ This builder no longer adds:
 * 'jasmine-fixtures' to the development-and-test group. We now assume Teaspoon Script testing is using Mocha rather than Jasmine, and Teaspoon has a perfectly-serviceable fixture feature to replace `jasmine-fixtures`' own `affix`, which was all we used that Gem for.
 * adds `twitter_bootstrap_form_for`, since the base `form_for` Gem now includes Bootstrap support.
 
+## JavaScript files in `vendor/assets/javascripts`
+
+1. [`ba-debug`](https://github.com/cowboy/javascript-debug), a simple wrapper for `console.log`;
+1. [`jquery++`](http://jquerypp.com/), widely useful DOM and event-listener functions;
+1. [`mootools`](http://mootools.net), "compact, modular, Object-Oriented JavaScript framework" that enhances several core classes (Array, String, etc);
+1. [`outerHTML`](http://www.darlesson.com/plugins/OuterHTML) is a plugin that gives jQuery access to an element's `outerHTML`, just like the DOM;
+1. [Underscore.js](http://underscorejs.org) is a "utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects".
 
 ## Changelog
 
 Please read the [`CHANGELOG.md`](CHANGELOG.md) file.
+
+## To Do
+
+* I'd rather be able to specify the root controller on the command line than have the script come to a full dead stop and ask if one should be created. A command line option like "--root-controller welcome" will probably make an appearance before a 1.0 release.
+* Output from generators and closing remarks are scrolled off the screen by the terminal `bundle install` if one forgets to add the `--skip-bundle` command line option. That output should be captured and presented at the true end of the run.
 
 ## Bugs and Feedback
 
@@ -100,4 +113,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
